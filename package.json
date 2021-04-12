@@ -1,0 +1,27 @@
+{
+  "name": "chat_room",
+  "version": "1.0.0",
+  "description": "Minimal chat",
+  "dependencies": {
+    "mime": "^1.2.7",
+    "socket.io": "^1.7.4"
+  },
+  "main": "server.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "https://github.com/aksamidiel/simple_chat.git"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "aksamidiel",
+  "license": "ISC",
+  "keywords": [
+    "chat",
+    "js"
+  ]
+}
