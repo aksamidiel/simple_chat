@@ -2,6 +2,7 @@ const express = require('express')
 const http = require('http')
 const path = require('path')
 const socketIO = require('socket.io')
+const formatMessage = require('.utils/messages')
 
 
 const app = express()
@@ -12,14 +13,16 @@ const io = socketIO(server)
 
 app.use(express.static(path.join(__dirname, 'public'))) //static folder 
 
+const botName = 'SimpleBot'
+
 // запускается когда происходит подключение клиентов
 io.on('connection', socket => {
     console.log('New connection')
 
-    socket.emit('message', 'Welcom to chat')
+    socket.emit('message', formatMessage(botName, 'Welcom to chat'))
 
     // широковещательный оповещение при подключении клиентов
-    socket.broadcast.emit('message', 'user has joined in chat')
+    socket.broadcast.emit('message', formatMessage(botName, 'user has joined in chat'))
 
     // запускается когда кто то из пользователей отключается
 
@@ -31,7 +34,7 @@ io.on('connection', socket => {
     // получение сообщений из чата
 
     socket.on('chatMessage', () => {
-       io.emit('message', msg)
+       io.emit('message', formatMessage('USER', msg))
     })
 
    
