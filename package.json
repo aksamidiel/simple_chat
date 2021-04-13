@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Minimal chat",
   "dependencies": {
+    "express": "^4.17.1",
     "mime": "^1.2.7",
     "socket.io": "^1.7.4"
   },
@@ -10,13 +11,12 @@
   "directories": {
     "lib": "lib"
   },
-  "repository": {
-    "https://github.com/aksamidiel/simple_chat.git"
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server",
+    "dev": "nodemon server"
   },
   "author": "aksamidiel",
   "license": "ISC",
