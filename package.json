@@ -12,6 +12,7 @@
     "lib": "lib"
   },
   "devDependencies": {
+    "moment": "^2.29.1",
     "nodemon": "^2.0.7"
   },
   "scripts": {
